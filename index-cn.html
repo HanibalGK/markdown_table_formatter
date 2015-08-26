@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
-  <title>Markdown Table Formatter</title>
+  <title>Markdown 表格在线格式化工具</title>
+  <meta name="description" content="Markdown 表格在线格式化工具。"/>
+  <meta name="keywords" content="Markdown,table,formatter,表格,在线格式化"/>
   <script type="text/javascript" src="src/MarkdownTableFormatter.js"></script>
   <script>
 function format_table() {
@@ -29,7 +31,7 @@ function loadExample(example_number) {
 
   </script>
   <style type="text/css">
-body { background-color: #e6e6e2; }
+body { background-color: #e6e6e2; font-family: sans-serif;}
 #mainWrapper { width: 850px; margin: auto;}
 textarea { width: 850px; height: 300px; font-family: SimHei; font-size: 14px; white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }
 .footer { font-size: 13px; }
@@ -38,21 +40,22 @@ textarea { width: 850px; height: 300px; font-family: SimHei; font-size: 14px; wh
 </head>
 <body>
   <div id="mainWrapper">
-    <h1>Markdown Table Formatter</h1>
-    <p>This tool formats basic MultiMarkdown style tables for easier plain text reading. It adds padding to all the cells to line up the pipe separators when using a mono-space font.</p>
-    
-    <p>To see what it's all about, try one of these examples, or format your own.</p>
+    <h1>Markdown 表格在线格式化工具</h1>
 
-    <p>Load: 
-      <a href="#" onClick="loadExample(1); return false;">Example 1</a> - 
-      <a href="#" onClick="loadExample(2); return false;">Example 2</a> - 
-      <a href="#" onClick="loadExample(3); return false;">Example 3</a>
+    <p>较源项目增加中文支持，每个中文占两个字符，英文等宽字体并不很好用，demo使用SimHei字体</p>
+    
+    <p>尝试以下事例，或粘贴你自己的文字。</p>
+
+    <p>试一试: 
+      <a href="#" onClick="loadExample(1); return false;">例子 1</a> - 
+      <a href="#" onClick="loadExample(2); return false;">例子 2</a> - 
+      <a href="#" onClick="loadExample(3); return false;">例子 3</a>
     </p>
 
     <form>  
       <textarea id="md_table_holder"></textarea>
       <div id="button_wrapper">
-        <input id="format_button" type="button" value="Format Table" onclick="format_table();"></input>
+        <input id="format_button" type="button" value="格式化！" onclick="format_table();"></input>
       </div>
 
     </form>
@@ -60,7 +63,8 @@ textarea { width: 850px; height: 300px; font-family: SimHei; font-size: 14px; wh
   <hr>  
 
   <p class="footer">
-    For more information:<br>
+    项目地址：<a href="https://github.com/dswwsd/markdown_table_formatter">GitHub Project</a><br><br><br>
+    原作者信息：<br>
     I'm on Twitter as <a href="https://twitter.com/TheIdOfAlan">@TheIdOfAlan</a><br>
     I sometimes post on my personal site <a href="http://alanwsmith.com/">alanwsmith.com</a><br>
     This is an Open Source <a href="https://github.com/alanwsmith/markdown_table_formatter">GitHub Project</a>.<br>
@@ -75,8 +79,10 @@ textarea { width: 850px; height: 300px; font-family: SimHei; font-size: 14px; wh
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-54483606-1', 'auto');
+
+  ga('create', 'UA-31024686-7', 'auto');
   ga('send', 'pageview');
+
 </script>
 
 

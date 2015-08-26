@@ -1,6 +1,6 @@
-Markdown Table Formatter
+Markdown 表格格式化工具
 ========================
 
-A JavaScript tool to format markdown tables for easier reading.
+JS写的格式化工具，平时遇到markdown未格式化的表格太恶心了。。不是么。。
 
-[Live version](http://dswwsd.github.io/markdown_table_formatter/index-cn.html)
+[在线预览](http://dswwsd.github.io/markdown_table_formatter/index-cn.html)
