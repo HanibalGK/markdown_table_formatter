@@ -7,6 +7,17 @@ function MarkdownTableFormatter() {
 
 }
 
+function getWidth(str) {
+  var l = str.length; 
+  var blen = 0; 
+  for(i=0; i<l; i++) { 
+    if ((str.charCodeAt(i) & 0xff00) != 0) { 
+      blen ++; 
+    } 
+    blen ++; 
+  }
+  return blen;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -61,10 +72,10 @@ MarkdownTableFormatter.prototype.get_column_widths = function() {
   for (var row_i = 0, row_l = this.cells.length; row_i < row_l; row_i = row_i + 1) {
     for (var col_i = 0, col_l = this.cells[row_i].length; col_i < col_l; col_i = col_i + 1) {
       if (typeof this.column_widths[col_i] === 'undefined') {
-        this.column_widths[col_i] = this.cells[row_i][col_i].length;
+        this.column_widths[col_i] = getWidth(this.cells[row_i][col_i]);
       }
-      else if (this.column_widths[col_i] < this.cells[row_i][col_i].length) {
-        this.column_widths[col_i] = this.cells[row_i][col_i].length;
+      else if (this.column_widths[col_i] < getWidth(this.cells[row_i][col_i])) {
+        this.column_widths[col_i] = getWidth(this.cells[row_i][col_i]);
       }
     }
   }
@@ -144,13 +155,13 @@ MarkdownTableFormatter.prototype.pad_cells_for_output = function() {
 
       // Handle anything that's not the separator row
       if (row_i != 1) {
-        while(this.cells[row_i][col_i].length < this.column_widths[col_i]) {
+        while(getWidth(this.cells[row_i][col_i]) < this.column_widths[col_i]) {
           this.cells[row_i][col_i] += " ";
         }
       }
       // Handle the separator row.
       else {
-        while(this.cells[row_i][col_i].length < this.column_widths[col_i]) {
+        while(getWidth(this.cells[row_i][col_i]) < this.column_widths[col_i]) {
           this.cells[row_i][col_i] += "-";
         }
       }
